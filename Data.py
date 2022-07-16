@@ -20,17 +20,17 @@ By @StarkBots
 
     # Home Button
     home_buttons = [
-        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")],
+        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="pyrogram")],
         [InlineKeyboardButton(text="🏠 Return Home 🏠", callback_data="home")]
     ]
 
     generate_button = [
-        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")]
+        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="pyrogram")]
     ]
 
     # Rest Buttons
     buttons = [
-        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="generate")],
+        [InlineKeyboardButton("🔥 Start Generating Session 🔥", callback_data="pyrogram")],
 
    ]
 
