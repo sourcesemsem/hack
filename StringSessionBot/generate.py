@@ -38,7 +38,7 @@ async def generate_session(bot, msg, telethon=False):
     user_id = msg.chat.id
     
     
-        api_id = 10113557
+        api_id = int(10113557)
     
     
     api_hash = "edd604444208db8ce6da5be78286187a"
