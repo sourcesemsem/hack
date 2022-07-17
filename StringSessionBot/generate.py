@@ -45,8 +45,7 @@ async def generate_session(bot, msg, telethon=False):
     
     api_hash = "edd604444208db8ce6da5be78286187a"
     phone_number_msg = await bot.ask(user_id, 'Now please send your `PHONE_NUMBER` along with the country code. \nExample : `+19876543210`', filters=filters.text)
-    if await cancelled(api_id_msg):
-        return
+    
     phone_number = phone_number_msg.text
     await msg.reply("Sending OTP...")
     if telethon:
@@ -67,8 +66,7 @@ async def generate_session(bot, msg, telethon=False):
         return
     try:
         phone_code_msg = await bot.ask(user_id, "Please check for an OTP in official telegram account. If you got it, send OTP here after reading the below format. \nIf OTP is `12345`, **please send it as** `1 2 3 4 5`.", filters=filters.text, timeout=600)
-        if await cancelled(api_id_msg):
-            return
+        
     except TimeoutError:
         await msg.reply('Time limit reached of 10 minutes. Please start generating session again.', reply_markup=InlineKeyboardMarkup(Data.generate_button))
         return
@@ -96,8 +94,7 @@ async def generate_session(bot, msg, telethon=False):
                 await client.sign_in(password=password)
             else:
                 await client.check_password(password=password)
-            if await cancelled(api_id_msg):
-                return
+            
         except (PasswordHashInvalid, PasswordHashInvalidError):
             await two_step_msg.reply('Invalid Password Provided. Please start generating session again.', quote=True, reply_markup=InlineKeyboardMarkup(Data.generate_button))
             return
