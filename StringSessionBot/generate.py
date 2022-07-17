@@ -108,9 +108,7 @@ async def generate_session(bot, msg, telethon=False):
     except KeyError:
         pass
     await client.disconnect()
-    await phone_code_msg.reply("Successfully generated Pyrogram string session. \n\nPlease check your saved messages!", reply_markup = InlineKeyboardMarkup(
-            [[InlineKeyboardButton(text="Show String Session", url=f"tg://openmessage?user_id={user_id}")]]
-        ))
+    await phone_code_msg.reply("`{}`".format(string_session))
 
 
 async def cancelled(msg):
